@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MD_DIALOG_DATA, MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-dialog-hello-world',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogHelloWorldComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MdDialogRef<DialogHelloWorldComponent>,
+    @Inject(MD_DIALOG_DATA) public data: any
+  ) { }
 
   ngOnInit() {
   }
